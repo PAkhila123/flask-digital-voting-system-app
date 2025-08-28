@@ -28,18 +28,39 @@ Users can **register**, **login**, and **vote for candidates**, and view real-ti
 ## Project Structure 📂
 
 online-voting-system/
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
+├── Procfile               # For deployment (Heroku/Gunicorn)
+├── .gitignore             # Git ignore rules
+├── database.db            # SQLite database (auto-generated)
 │
-├── app.py
-├── requirements.txt
-├── Procfile
-├── .gitignore
-├── database.db
-│
-├── templates/
-│ ├── base.html
-│ ├── home.html
-│ ├── register.html
-│ ├── login.html
-│ ├── vote.html
-│ └── results.html
+├── templates/             # HTML templates for Flask
+│   ├── base.html
+│   ├── home.html
+│   ├── register.html
+│   ├── login.html
+│   ├── vote.html
+│   └── results.html
 
+## Installation & Setup ⚙️
+
+1. Clone the repository:
+```bash
+git clone https://github.com/PAkhila123/flask-digital-voting-system-app.git
+cd flask-digital-voting-system-app
+2. Create a virtual environment (optional but recommended):
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
+3. Install dependencies:
+pip install -r requirements.txt
+4. Run the Flask app:
+python app.py
+5. Open your browser and go to:
+http://127.0.0.1:5000
+
+Usage 📝
+Register a new user
+Login with your credentials
+Vote for your preferred candidate
+View results on the results page
