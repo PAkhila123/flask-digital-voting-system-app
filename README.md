@@ -44,16 +44,17 @@ online-voting-system/
 
 ----    
 ## Installation & Setup ⚙️
-1. Clone the repository
+1. Clone the repository:
+```bash
 git clone https://github.com/PAkhila123/flask-digital-voting-system-app.git
 cd flask-digital-voting-system-app
-2. Create a virtual environment (optional but recommended):
+3. Create a virtual environment (optional but recommended):
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 venv\Scripts\activate     # Windows
-3. Install dependencies:
+4. Install dependencies:
 pip install -r requirements.txt
-4. Run the Flask app:
+5. Run the Flask app:
 python app.py
-5. Open your browser and go to:
+6. Open your browser and go to:
 http://127.0.0.1:5000
