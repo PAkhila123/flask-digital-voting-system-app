@@ -42,9 +42,11 @@ online-voting-system/
 │   ├── vote.html
 │   └── results.html
 
+----    
 ## Installation & Setup ⚙️
 
-1. Clone the repository:
+1. Clone the repository
+
 ```bash
 git clone https://github.com/PAkhila123/flask-digital-voting-system-app.git
 cd flask-digital-voting-system-app
@@ -58,9 +60,3 @@ pip install -r requirements.txt
 python app.py
 5. Open your browser and go to:
 http://127.0.0.1:5000
-
-Usage 📝
-Register a new user
-Login with your credentials
-Vote for your preferred candidate
-View results on the results page
