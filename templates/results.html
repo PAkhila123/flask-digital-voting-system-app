@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="mb-4 text-center">📊 Live Voting Results</h2>
+
+    <div id="results-container"></div>
+
+    <hr>
+    <p class="text-center fw-bold" id="total-votes">Total Votes: 0</p>
+  </div>
+</div>
+
+<script>
+  async function fetchResults() {
+    const response = await fetch("/results_data");
+    const data = await response.json();
+
+    const container = document.getElementById("results-container");
+    container.innerHTML = "";
+
+    data.candidates.forEach((candidate, index) => {
+      container.innerHTML += `
+        <div class="mb-4">
+          <h5>${candidate.name} <span class="badge bg-primary">${candidate.votes} votes</span></h5>
+          <div class="progress">
+            <div class="progress-bar ${index==0?'bg-success': index==1?'bg-info':'bg-warning'}"
+                 role="progressbar"
+                 style="width: ${candidate.percentage}%"
+                 aria-valuenow="${candidate.votes}"
+                 aria-valuemin="0"
+                 aria-valuemax="${data.total_votes}">
+              ${candidate.percentage}%
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById("total-votes").innerText = `Total Votes: ${data.total_votes}`;
+  }
+
+  // Fetch every 3 seconds
+  setInterval(fetchResults, 3000);
+  // Load immediately on page open
+  fetchResults();
+</script>
+{% endblock %}
+
+
+
+
+
+

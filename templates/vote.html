@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Vote{% endblock %}
+
+{% block content %}
+  <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px;">
+    <h2 class="text-center mb-4">Cast Your Vote</h2>
+    <form method="POST">
+      {% for candidate in candidates %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="candidate" value="{{ candidate[0] }}" required>
+          <label class="form-check-label">{{ candidate[1] }}</label>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary w-100 mt-3">Submit Vote</button>
+    </form>
+  </div>
+{% endblock %}
+
+
